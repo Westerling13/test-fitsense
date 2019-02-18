@@ -1,0 +1,25 @@
+cart:
+  -
+    src: 'item-01-l.jpg'
+    name: 'Кроссовки мужские Nike мужские Nike'
+    color: 'Черный'
+    count: 1
+    stock: true
+    price: '15 000'
+    discount: '330'
+  -
+    src: 'item-02-l.jpg'
+    name: 'Кроссовки мужские Nike мужские Nike'
+    color: 'Черный'
+    count: 1
+    stock: true
+    price: '15 000'
+    discount: '330'
+  -
+    src: 'item-03-l.jpg'
+    name: 'Кроссовки мужские Nike мужские Nike'
+    color: 'Черный'
+    count: 1
+    stock: true
+    price: '15 000'
+    discount: '330'

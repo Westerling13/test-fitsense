@@ -1,0 +1,35 @@
+<section class="cart">
+  <h2 class="visually-hidden">Корзина</h2>
+  <div class="cart__top-bar">
+    <b class="cart__order">Ваш заказ</b>
+    <span class="cart__count">3 товара</span>
+  </div>
+  <ul class="cart__list">
+    {{# each global.cart}}
+      <li class="cart__item">
+        <div class="cart__picture">
+          <img src="assets/img/{{src}}" width="50" height="50" alt="Фото товара">
+        </div>
+        <div class="cart__item-info">
+          <a href="#" class="cart__link">{{name}}</a>
+          <p class="cart__item-color">{{color}}</p>
+        </div>
+        <p class="cart__item-count">{{count}}</p>
+        <div class="cart__price">
+          <p>{{price}}</p>
+          {{# if stock}}<p class="cart__discount">{{discount}}</p>{{/ if}}
+        </div>
+        <button class="cart__del-button">Удалить</button>
+      </li>
+    {{/each}}
+  </ul>
+  <div class="cart__bottom-bar">
+    <form action="" class="cart__promocode" method="post">
+      <label class="cart__input-wrapper">
+        <input type="text" name="promocode">
+      </label>
+      <button class="cart__promo-button" type="submit">Применить промокод</button>
+    </form>
+    <p class="cart__sum">Сумма: <span>60 000</span></p>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section class="checkout">
+  <ul class="checkout__nav">
+    <li class="checkout__item">
+      <a href="#" class="checkout__button checkout__button--active checkout__button--person">Кому доставить</a>
+    </li>
+    <li class="checkout__item">
+      <a href="#" class="checkout__button checkout__button--method">Способ доставки</a>
+    </li>
+    <li class="checkout__item">
+      <a href="#" class="checkout__button checkout__button--payment">Способ оплаты</a>
+    </li>
+    <li class="checkout__item">
+      <a href="#" class="checkout__button checkout__button--confirm">Проверка и подтверждение</a>
+    </li>
+  </ul>
+  <h1 class="checkout__title">Оформление заказа</h1>
+
+  {{> cart}}
+
+  <div class="checkout__customer">
+    <a href="#" class="checkout__sign-up">Для новых покупателей</a>
+    <a href="#" class="checkout__sign-in">Войти</a>
+  </div>
+
+  {{> registration}}
+  {{> authorization}}
+</section>

@@ -1,0 +1,93 @@
+.checkout {
+  width: 100%;
+  padding: 18px rem(100) 0;
+
+  font-size: rem(15);
+
+
+  &__nav {
+    display: flex;
+    margin: 0 0 35px;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: rem(14);
+  }
+
+  &__button {
+    position: relative;
+
+    display: block;
+    padding: 20px 25px 15px 61px;
+
+    color: inherit;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+
+      font-family: "Icons";
+      font-size: 35px;
+      color: $orange;
+
+      transform: translateY(-50%);
+    }
+
+    &--active {
+      color: $white;
+
+      background-color: $orange;
+
+      &::before {
+        color: $white;
+      }
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        bottom: -13px;
+        left: 17px;
+
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 13px 13px 0 13px;
+        border-color: $orange transparent transparent transparent;
+      }
+    }
+
+    &--person {
+      &::before {
+        content: "\e903";
+      }
+    }
+
+    &--method {
+      &::before {
+        content: "\e901";
+      }
+    }
+
+    &--payment {
+      &::before {
+        content: "\e902";
+      }
+    }
+
+    &--confirm {
+      &::before {
+        content: "\e900";
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    font-size: rem(34);
+    font-weight: 700;
+  }
+}

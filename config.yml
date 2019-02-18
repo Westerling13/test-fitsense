@@ -4,7 +4,7 @@ PORT: 8000
 # Настройки Autoprefixer, для кроссбраузерности
 COMPATIBILITY:
   - "last 2 versions"
-  - "ie >= 9"
+  - "ie >= 11"
   - "ios >= 7"
 
 # Настройки для UnCSS

@@ -1,0 +1,64 @@
+.cart {
+  max-width: 660px;
+
+  font-size: rem(14);
+
+  &__top-bar {
+    width: 100%;
+
+    font-size: rem(20);
+
+    border-bottom: 1px solid $gray;
+  }
+
+  &__order {
+    margin-right: 17px;
+
+    font-weight: 700;
+  }
+
+  &__count {
+    color: $gray;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 24px 0 0;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__picture {
+    flex-shrink: 0;
+    margin-right: rem(18);
+  }
+
+  &__item-info {
+    max-width: 260px;
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__item-color{
+    margin: 0;
+  }
+
+  &__item-count {
+    margin: 0;
+  }
+
+  &__price {
+
+    & p {
+      margin: 0;
+    }
+
+    &__discount {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 19px rem(100);
+
+  font-size: rem(11);
+  color: $gray;
+
+  background-color: $light-gray;
+
+  &__item:not(:last-child) {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: "";
+
+      display: block;
+      width: 4px;
+      height: 4px;
+      margin: 0 10px 0;
+
+      background-color: $gray;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: inherit;
+  }
+}

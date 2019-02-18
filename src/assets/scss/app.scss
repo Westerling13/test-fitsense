@@ -8,3 +8,8 @@
 
 @import 'global/variables';
 @import 'global/global';
+@import "global/mixins";
+@import "components/page";
+@import "components/breadcrumbs";
+@import "components/checkout";
+@import "components/cart";

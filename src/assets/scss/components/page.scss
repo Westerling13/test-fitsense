@@ -1,0 +1,20 @@
+.page {
+  font-size: rem(16);
+
+  &__body {
+    width: 100%;
+
+    font-family: $main-font-family;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &__wrapper {
+    max-width: $desktop-width;
+    width: 100%;
+    min-width: $mobile-width;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
