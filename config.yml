@@ -1,0 +1,29 @@
+# Локальный сервер будет открываться в localhost:xxxx, где xxxx указанный порт
+PORT: 8000
+
+# Настройки Autoprefixer, для кроссбраузерности
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+  - "ios >= 7"
+
+# Настройки для UnCSS
+UNCSS_OPTIONS:
+  html:
+    # Путь где именно должен искать неиспользуемые классы, точнее во всех файлах .html в папке dist
+    - "dist/**/*.html"
+
+# В Gulp в переменной PATHS будут использоваться данные пути
+PATHS:
+  # Путь для папки dist
+  dist: "dist"
+  # Путь для папки assets, где находятся все картинки, CSS и JavaScript файлы
+  assets:
+    - "src/assets/**/*"
+    - "!src/assets/{img,js,scss}/**/*"
+  # Пути для Sass библиотек, который могут быть загружены с помощью @import
+  sass:
+    - "node_modules/normalize-scss/sass"
+  # Путь для JavaScript, где начинает работать Webpack, чтобы собирать модули
+  entries:
+    - "src/assets/js/app.js"

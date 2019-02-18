@@ -1,0 +1,10 @@
+@charset 'utf-8';
+
+// Подключаем scss файлы из node_modules
+
+@import 'normalize/import-now';
+
+// Файлы для вёрстки
+
+@import 'global/variables';
+@import 'global/global';
