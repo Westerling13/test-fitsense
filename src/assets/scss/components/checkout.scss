@@ -146,6 +146,12 @@
 
     font-size: rem(20);
     font-weight: 700;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 17px;
+      
+      font-size: rem(16);
+    }
   }
 
   &__customer-button {
@@ -162,6 +168,10 @@
 
     &:not(:last-child) {
       margin-right: rem(57);
+
+      @media (max-width: $tablet-width) {
+        margin-right: rem(45);
+      }
     }
   }
 }

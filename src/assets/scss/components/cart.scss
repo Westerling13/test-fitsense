@@ -4,6 +4,10 @@
 
   font-size: rem(14);
 
+  @media (max-width: $tablet-width) {
+    padding-bottom: 31px;
+  }
+
   &__top-bar {
     width: 100%;
     padding: 0 0 11px;

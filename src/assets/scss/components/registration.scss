@@ -2,6 +2,10 @@
   padding: 15px 0 100px;
   font-size: rem(16);
 
+  @media (max-width: $tablet-width) {
+    font-size: rem(13);
+  }
+
   &__form {
     display: flex;
     flex-wrap: wrap;
@@ -17,6 +21,10 @@
     flex-wrap: wrap;
     width: 100%;
     margin: 0 0 4px;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 2px;
+    }
   }
 
   &__input-wrapper {
@@ -26,10 +34,10 @@
     min-height: 100px;
     margin: 0 rem(50) 12px 0;
 
-    @media (max-width: 799px) {
-      max-width: none;
-      width: 100%;
-      margin: 0 0 12px;
+    @media (max-width: $tablet-width) {
+      width: 43%;
+      min-height: 83px;
+      margin: 0 rem(42) 8px 0;
     }
 
     &:nth-child(even) {
@@ -58,6 +66,12 @@
     border: none;
     background-color: $light-gray;
 
+    @media (max-width: $tablet-width) {
+      padding: 7px 9px 9px;
+
+      font-size: rem(12);
+    }
+
     &::placeholder {
       color: $dark-gray;
 
@@ -76,6 +90,10 @@
   &__input-caption {
     font-size: rem(14);
     color: $dark-gray;
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(12);
+    }
   }
 
   &__checkbox-wrapper {
@@ -84,6 +102,10 @@
     margin: 0 0 53px;
 
     cursor: pointer;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 44px;
+    }
   }
 
   &__checkbox {
@@ -118,6 +140,12 @@
 
     background-color: $light-gray;
 
+    @media (max-width: $tablet-width) {
+      width: 21px;
+      height: 21px;
+      margin: 3px 16px 0 0;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -133,6 +161,10 @@
       opacity: 0;
 
       transition: $global-transition;
+
+      @media (max-width: $tablet-width) {
+        width: 17px;
+      }
     }
 
     &::before {
@@ -149,6 +181,11 @@
 
     font-size: rem(14);
     line-height: rem(24);
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(11);
+      line-height: rem(19);
+    }
   }
 
   &__button {
@@ -158,11 +195,22 @@
 
     background-color: $orange;
     cursor: pointer;
+
+    @media (max-width: $tablet-width) {
+      margin-right: 25px;
+      padding: 9px 41px 11px;
+
+      font-size: rem(16);
+    }
   }
 
   &__info {
     margin: 0;
 
     color: $dark-gray;
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(16);
+    }
   }
 }
