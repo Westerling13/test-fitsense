@@ -1,6 +1,18 @@
 .page {
   font-size: rem(16);
 
+  @media (max-width: 1199px) {
+      font-size: 16 / 800 * 100vw;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 16 / 375 * 100vw;
+  }
+
+  @media (max-width: 320px) {
+    font-size: rem(16);
+  }
+
   &__body {
     width: 100%;
 

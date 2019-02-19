@@ -3,12 +3,16 @@
   justify-content: flex-start;
   width: 100%;
   margin: 0;
-  padding: 19px rem(100);
+  padding: 15px rem(100) 17px;
 
   font-size: rem(11);
-  color: $gray;
+  color: $dark-gray;
 
   background-color: $light-gray;
+
+  @media (max-width: 1199px) {
+    padding: 8px rem(20) 6px;
+  }
 
   &__item:not(:last-child) {
     display: flex;
@@ -22,7 +26,7 @@
       height: 4px;
       margin: 0 10px 0;
 
-      background-color: $gray;
+      background-color: $dark-gray;
     }
   }
 

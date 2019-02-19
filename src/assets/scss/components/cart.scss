@@ -1,64 +1,300 @@
 .cart {
   max-width: 660px;
+  padding: 16px 0 39px;
 
   font-size: rem(14);
 
   &__top-bar {
     width: 100%;
+    padding: 0 0 11px;
 
     font-size: rem(20);
 
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid $dark-gray;
+
+    @media (max-width: $tablet-width) {
+      padding-bottom: 9px;
+
+      font-size: rem(16);
+    }
   }
 
   &__order {
-    margin-right: 17px;
+    margin-right: rem(10);
 
     font-weight: 700;
+
+    @media (max-width: $tablet-width) {
+      margin-right: rem(8);
+    }
   }
 
   &__count {
-    color: $gray;
+    color: $dark-gray;
   }
 
   &__list {
-    margin: 0;
-    padding: 24px 0 0;
+    margin: 0 0 32px;
+    padding: 21px 0 0;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 22px;
+      padding-top: 17px;
+    }
   }
 
   &__item {
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 25px;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 17px;
+    }
+
+    &:hover .cart__del-button {
+      opacity: 1;
+    }
   }
 
   &__picture {
+    display: block;
+    width: 50px;
     flex-shrink: 0;
+    align-self: center;
     margin-right: rem(18);
+
+    @media (max-width: $tablet-width) {
+      width: 39px;
+      align-self: auto;
+      margin-top: 4px;
+      margin-right: rem(16);
+    }
   }
 
   &__item-info {
-    max-width: 260px;
+    max-width: 250px;
+    margin-right: rem(25);
+
+    @media (max-width: $tablet-width) {
+      max-width: 170px;
+      margin-right: rem(50);
+    }
   }
 
   &__link {
     display: block;
+
+    line-height: rem(18);
+    font-weight: 700;
+    color: inherit;
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(12);
+      line-height: rem(14.5);
+    }
   }
 
   &__item-color{
     margin: 0;
+
+    font-size: rem(13);
+    line-height: rem(22);
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(10.5);
+    }
   }
 
   &__item-count {
-    margin: 0;
+    margin: 0 rem(99) 0 0;
+
+    line-height: rem(18);
+
+    @media (max-width: $tablet-width) {
+      margin-right: rem(78);
+
+      font-size: rem(12);
+    }
   }
 
   &__price {
+    margin: 0 rem(50) 0 0;
+    letter-spacing: 0.6px;
+  }
 
-    & p {
-      margin: 0;
+  &__price-tag {
+    margin: 0 0 6px;
+
+    font-size: rem(16);
+    font-weight: 700;
+    line-height: rem(16);
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(13);
+      line-height: rem(13);
     }
 
-    &__discount {
-      margin: 0;
+    &::after {
+      content: "\20BD";
+
+      margin-left: 4px;
+
+      font-weight: 400;
+    }
+  }
+
+  &__discount {
+    margin: 0;
+
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: rem(20);
+    letter-spacing: 0.3px;
+    color: $dark-gray;
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(12);
+      line-height: rem(18);
+    }
+
+    &::after {
+      content: "\20BD";
+
+      margin-left: 4px;
+
+      font-weight: 400;
+    }
+  }
+
+  &__del-button {
+    position: relative;
+    align-self: baseline;
+
+    width: 20px;
+    height: 20px;
+
+    font-size: 0;
+    line-height: 0;
+
+    opacity: 0;
+    cursor: pointer;
+
+    transition: $global-transition;
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 20px;
+      height: 2px;
+
+      background-color: $black;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+  }
+
+  &__bottom-bar {
+    width: 100%;
+  }
+
+  &__promocode {
+    display: flex;
+    margin: 0 0 12px;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__input-wrapper {
+    display: block;
+    margin-right: 5px;
+  }
+
+  &__input {
+    width: 145px;
+    padding: 10px 15px;
+
+    font-size: rem(16);
+
+    border: none;
+    background-color: $light-gray;
+
+    @media (max-width: $tablet-width) {
+      width: 117px;
+      padding: 8px 12px;
+
+      font-size: rem(13);
+    }
+
+    &:focus {
+      outline: 2px solid $dark-gray;
+    }
+  }
+
+  &__promo-button {
+    padding: 7px 29px 10px;
+
+    font-weight: 700;
+    color: $dark-gray;
+
+    background-color: $gray;
+    cursor: pointer;
+
+    @media (max-width: $tablet-width) {
+      padding: 6px 18px 7px;
+
+      font-size: rem(12);
+    }
+
+    &:focus {
+      outline: 2px solid $dark-gray;
+    }
+  }
+
+  &__sum {
+    margin: 0;
+
+    font-size: rem(20);
+    font-weight: 700;
+
+    @media (max-width: $tablet-width) {
+      font-size: rem(16);
+    }
+
+    & span {
+      margin-left: 9px;
+
+      font-size: rem(24);
+      color: $orange;
+
+      @media (max-width: $tablet-width) {
+        margin-left: 7px;
+
+        font-size: rem(19);
+      }
+
+      &::after {
+        content: "\20BD";
+
+        margin-left: 5px;
+
+        //font-size: rem(23);
+        line-height: 1.5;
+      }
     }
   }
 }

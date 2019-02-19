@@ -4,24 +4,46 @@
 
   font-size: rem(15);
 
+  @media (max-width: 1199px) {
+    padding: 15px rem(20) 0;
+    font-size: rem(12);
+  }
 
   &__nav {
     display: flex;
-    margin: 0 0 35px;
+    flex-wrap: wrap;
+    margin: 0 0 39px;
     padding: 0;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 20px;
+    }
   }
 
-  &__item {
-    margin-right: rem(14);
+  &__item:not(:last-child) {
+    margin-right: rem(7);
+
+    @media (max-width: 1199px) {
+      margin-right: rem(18px);
+    }
   }
 
   &__button {
     position: relative;
 
     display: block;
-    padding: 20px 25px 15px 61px;
+    padding: 14px rem(24) 14px rem(60);
 
+    letter-spacing: 0.4px;
     color: inherit;
+
+    @media (max-width: 1199px) {
+      padding: 13px 0 11px rem(50);
+
+      font-size: rem(12);
+
+      color: $dark-gray;
+    }
 
     &::before {
       position: absolute;
@@ -33,12 +55,25 @@
       color: $orange;
 
       transform: translateY(-50%);
+
+      @media (max-width: 1199px) {
+        left: 10px;
+
+        font-size: 30px;
+        color: $dark-gray;
+      }
     }
 
     &--active {
       color: $white;
 
       background-color: $orange;
+
+      @media (max-width: 1199px) {
+        padding: 13px rem(16) 11px rem(50);
+
+        letter-spacing: 0.9px;
+      }
 
       &::before {
         color: $white;
@@ -48,7 +83,7 @@
         content: "";
 
         position: absolute;
-        bottom: -13px;
+        bottom: -11px;
         left: 17px;
 
         width: 0;
@@ -56,6 +91,13 @@
         border-style: solid;
         border-width: 13px 13px 0 13px;
         border-color: $orange transparent transparent transparent;
+
+        @media (max-width: 1199px) {
+          left: 16px;
+          bottom: -9px;
+
+          border-width: 9px 9px 0 9px;
+        }
       }
     }
 
@@ -89,5 +131,37 @@
 
     font-size: rem(34);
     font-weight: 700;
+    letter-spacing: 0.6px;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 10px;
+
+      font-size: rem(32);
+    }
+  }
+
+  &__customer {
+    display: flex;
+    margin: 0 0 25px;
+
+    font-size: rem(20);
+    font-weight: 700;
+  }
+
+  &__customer-button {
+    display: block;
+    padding: 0 0 4px;
+
+    color: $dark-gray;
+
+    &--active {
+      color: $black;
+
+      border-bottom: 2px solid $black;
+    }
+
+    &:not(:last-child) {
+      margin-right: rem(57);
+    }
   }
 }

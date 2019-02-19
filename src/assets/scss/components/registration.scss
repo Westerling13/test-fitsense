@@ -1,0 +1,168 @@
+.registration {
+  padding: 15px 0 100px;
+  font-size: rem(16);
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    max-width: 865px;
+    width: 100%;
+    margin: 0;
+  }
+
+  &__form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 0 4px;
+  }
+
+  &__input-wrapper {
+    display: block;
+    max-width: 407px;
+    width: 47%;
+    min-height: 100px;
+    margin: 0 rem(50) 12px 0;
+
+    @media (max-width: 799px) {
+      max-width: none;
+      width: 100%;
+      margin: 0 0 12px;
+    }
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin: 0 0 10px;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin: 0 0 3px;
+    padding: 12px 14px;
+
+    font-family: inherit;
+    font-size: rem(14);
+    letter-spacing: 0.2px;
+
+    border: none;
+    background-color: $light-gray;
+
+    &::placeholder {
+      color: $dark-gray;
+
+      transition: $global-transition;
+    }
+
+    &:focus {
+      outline: 2px solid $dark-gray;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &__input-caption {
+    font-size: rem(14);
+    color: $dark-gray;
+  }
+
+  &__checkbox-wrapper {
+    display: flex;
+    width: 100%;
+    margin: 0 0 53px;
+
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    position: absolute;
+    z-index: -1;
+
+    width: 0.1px;
+    height: 0.1px;
+
+    opacity: 0;
+    overflow: hidden;
+
+    &:checked + .registration__checkbox-indicator::before,
+    &:checked + .registration__checkbox-indicator::after {
+      opacity: 1;
+    }
+
+    &:focus + .registration__checkbox-indicator,
+    &:active + .registration__checkbox-indicator {
+      outline: 2px solid $dark-gray;
+    }
+  }
+
+  &__checkbox-indicator {
+    position: relative;
+
+    display: block;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    margin: 5px 21px 0 0;
+
+    background-color: $light-gray;
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 20px;
+      height: 2px;
+
+      background-color: $black;
+      opacity: 0;
+
+      transition: $global-transition;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+  }
+
+  &__checkbox-text {
+    margin: 0;
+
+    font-size: rem(14);
+    line-height: rem(24);
+  }
+
+  &__button {
+    margin: 0 30px 0 0;
+    padding: 13px 57px 19px;
+    color: $white;
+
+    background-color: $orange;
+    cursor: pointer;
+  }
+
+  &__info {
+    margin: 0;
+
+    color: $dark-gray;
+  }
+}
