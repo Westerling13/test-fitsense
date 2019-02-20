@@ -1,14 +1,25 @@
-.registration {
+.authorization {
   padding: 15px 0 100px;
   font-size: rem(16);
+
+  background-color: $white;
 
   @media (max-width: $tablet-width) {
     font-size: rem(13);
   }
 
   @media (max-width: $mobile-width) {
-    padding: 6px 0 100px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+
+    width: 320px;
+    padding: 20px;
+
     font-size: rem(14);
+
+    transform: translate(-50%, -50%);
   }
 
   &__form {
@@ -58,18 +69,6 @@
 
     &:nth-child(even) {
       margin-right: 0;
-    }
-
-    &--phone {
-      @media (max-width: $mobile-width) {
-        order: 1;
-      }
-    }
-
-    &--email {
-      @media (max-width: $mobile-width) {
-        order: 2;
-      }
     }
   }
 
@@ -136,116 +135,6 @@
       font-size: rem(12);
     }
   }
-
-  &__checkbox-wrapper {
-    display: flex;
-    width: 100%;
-    margin: 0 0 53px;
-
-    cursor: pointer;
-
-    @media (max-width: $tablet-width) {
-      margin-bottom: 44px;
-    }
-
-    @media (max-width: $mobile-width) {
-      margin-bottom: 23px;
-    }
-  }
-
-  &__checkbox {
-    position: absolute;
-    z-index: -1;
-
-    width: 0.1px;
-    height: 0.1px;
-
-    opacity: 0;
-    overflow: hidden;
-
-    &:checked + .registration__checkbox-indicator::before,
-    &:checked + .registration__checkbox-indicator::after {
-      opacity: 1;
-    }
-
-    &:focus + .registration__checkbox-indicator,
-    &:active + .registration__checkbox-indicator {
-      outline: 2px solid $dark-gray;
-    }
-  }
-
-  &__checkbox-indicator {
-    position: relative;
-
-    display: block;
-    flex-shrink: 0;
-    width: 25px;
-    height: 25px;
-    margin: 5px 21px 0 0;
-
-    background-color: $light-gray;
-
-    @media (max-width: $tablet-width) {
-      width: 21px;
-      height: 21px;
-      margin: 3px 16px 0 0;
-    }
-
-    @media (max-width: $mobile-width) {
-      width: 25px;
-      height: 25px;
-      margin-right: 13px;
-    }
-
-    &::before,
-    &::after {
-      content: "";
-
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      width: 20px;
-      height: 2px;
-
-      background-color: $black;
-      opacity: 0;
-
-      transition: $global-transition;
-
-      @media (max-width: $tablet-width) {
-        width: 17px;
-      }
-    }
-
-    &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    &::after {
-      transform: translate(-50%, -50%) rotate(135deg);
-    }
-  }
-
-  &__checkbox-text {
-    margin: 0;
-
-    font-size: rem(14);
-    line-height: rem(24);
-
-    @media (max-width: $tablet-width) {
-      font-size: rem(11);
-      line-height: rem(19);
-    }
-
-    @media (max-width: $mobile-width) {
-      padding-right: 10px;
-
-      font-size: rem(12);
-      line-height: rem(17);
-    }
-  }
-
   &__button {
     margin: 0 30px 0 0;
     padding: 13px 57px 19px;

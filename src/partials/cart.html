@@ -10,14 +10,16 @@
         <a href="#" class="cart__picture">
           <img src="assets/img/{{src}}" width="" height="" alt="Фото товара">
         </a>
-        <div class="cart__item-info">
-          <a href="#" class="cart__link">{{name}}</a>
-          <p class="cart__item-color">{{color}}</p>
-        </div>
-        <p class="cart__item-count">{{count}} шт.</p>
-        <div class="cart__price">
-          <p class="cart__price-tag">{{price}}</p>
-          {{# if stock}}<p class="cart__discount">Скидка: {{discount}}</p>{{/ if}}
+        <div class="cart__item-wrapper">
+          <div class="cart__item-info">
+            <a href="#" class="cart__link">{{name}}</a>
+            <p class="cart__item-color">{{color}}</p>
+          </div>
+          <p class="cart__item-count">{{count}} шт.</p>
+          <div class="cart__price">
+            <p class="cart__price-tag">{{price}}</p>
+            {{# if stock}}<p class="cart__discount">Скидка: {{discount}}</p>{{/ if}}
+          </div>
         </div>
         <button class="cart__del-button">Удалить</button>
       </li>

@@ -1,26 +1,26 @@
-<section class="registration">
+<section class="checkout__section checkout__section--active registration" id="signUp">
   <form class="registration__form" method="post">
     <div class="registration__form-wrapper">
 
       <label class="registration__input-wrapper">
         <span class="registration__label">Ваше имя<span>*</span></span>
-        <input type="text" class="registration__input">
+        <input type="text" class="registration__input" required>
       </label>
 
-      <label class="registration__input-wrapper">
+      <label class="registration__input-wrapper registration__input-wrapper--phone">
         <span class="registration__label">Телефон<span>*</span></span>
-        <input type="text" class="registration__input" placeholder="+ 7 (___) ___ - __ - __">
+        <input type="text" class="registration__input" id="phone" placeholder="+ 7 (___) ___ - __ - __" required>
         <span class="registration__input-caption">Необходим для уточнения деталей заказа</span>
       </label>
 
       <label class="registration__input-wrapper">
         <span class="registration__label">Ваша фамилия<span>*</span></span>
-        <input type="text" class="registration__input">
+        <input type="text" class="registration__input" required>
       </label>
 
-      <label class="registration__input-wrapper">
+      <label class="registration__input-wrapper registration__input-wrapper--email">
         <span class="registration__label">E-mail<span>*</span></span>
-        <input type="email" class="registration__input">
+        <input type="email" class="registration__input" required>
         <span class="registration__input-caption">Пришлем информацию о заказе</span>
       </label>
 

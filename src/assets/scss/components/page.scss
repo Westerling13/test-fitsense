@@ -1,15 +1,15 @@
 .page {
   font-size: rem(16);
 
-  @media (max-width: 1199px) {
+  @media (max-width: $tablet-width) {
       font-size: 16 / 800 * 100vw;
   }
 
-  @media (max-width: 799px) {
-    font-size: 16 / 375 * 100vw;
+  @media (max-width: $mobile-width) {
+    font-size: 16 / 320 * 100vw;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 360px) {
     font-size: rem(16);
   }
 
@@ -25,8 +25,25 @@
   &__wrapper {
     max-width: $desktop-width;
     width: 100%;
-    min-width: $mobile-width;
+    min-width: 320px;
     margin: 0 auto;
     padding: 0;
+  }
+
+  &__layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: none;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba($black, 0.4);
+
+    &--active {
+      display: block;
+    }
   }
 }

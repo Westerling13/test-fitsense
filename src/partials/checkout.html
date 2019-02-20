@@ -1,7 +1,7 @@
 <section class="checkout">
   <ul class="checkout__nav">
     <li class="checkout__item">
-      <a href="#" class="checkout__button checkout__button--active checkout__button--person">Кому доставить</a>
+      <a class="checkout__button checkout__button--active checkout__button--person">Кому доставить</a>
     </li>
     <li class="checkout__item">
       <a href="#" class="checkout__button checkout__button--method">Способ доставки</a>
@@ -14,12 +14,22 @@
     </li>
   </ul>
   <h1 class="checkout__title">Оформление заказа</h1>
+  <div class="checkout__top-bar">
+    <a href="#" class="checkout__nav-button">
+      <i class="checkout__nav-icon"></i>
+      Кому доставить
+    </a>
+  </div>
+
 
   {{> cart}}
 
   <div class="checkout__customer">
-    <a href="#" class="checkout__customer-button checkout__customer-button--active" id="sign-up">Для новых покупателей</a>
-    <a href="#" class="checkout__customer-button" id="sign-in">Войти</a>
+    <a href="#" class="checkout__customer-button checkout__customer-button--active checkout__customer-button--sign-up" data-type="signUp">
+      <i class="checkout__tab-icon"></i>
+      Для новых покупателей
+    </a>
+    <a href="#" class="checkout__customer-button checkout__customer-button--sign-in" id="sign-in" data-type="signIn">Войти</a>
   </div>
 
   {{> registration}}

@@ -1,12 +1,18 @@
 .checkout {
+  position: relative;
+
   width: 100%;
   padding: 18px rem(100) 0;
 
   font-size: rem(15);
 
-  @media (max-width: 1199px) {
+  @media (max-width: $tablet-width) {
     padding: 15px rem(20) 0;
     font-size: rem(12);
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 40px rem(16) 0;
   }
 
   &__nav {
@@ -14,17 +20,43 @@
     flex-wrap: wrap;
     margin: 0 0 39px;
     padding: 0;
-
-    @media (max-width: 1199px) {
+    
+    @media (max-width: $tablet-width) {
       margin-bottom: 20px;
+    }
+
+    @media (max-width: $mobile-width) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+
+      display: none;
+      width: 100vw;
+      margin-bottom: 0;
+
+      background-color: $white;
+
+      animation-name: slideInLeft;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+
+    &--active {
+      display: block;
     }
   }
 
   &__item:not(:last-child) {
     margin-right: rem(7);
 
-    @media (max-width: 1199px) {
+    @media (max-width: $tablet-width) {
       margin-right: rem(18px);
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+      margin-right: 0;
     }
   }
 
@@ -37,12 +69,19 @@
     letter-spacing: 0.4px;
     color: inherit;
 
-    @media (max-width: 1199px) {
+    @media (max-width: $tablet-width) {
       padding: 13px 0 11px rem(50);
 
       font-size: rem(12);
 
       color: $dark-gray;
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+      padding-left: rem(20);
+
+      font-size: rem(18);
     }
 
     &::before {
@@ -56,11 +95,15 @@
 
       transform: translateY(-50%);
 
-      @media (max-width: 1199px) {
+      @media (max-width: $tablet-width) {
         left: 10px;
 
         font-size: 30px;
         color: $dark-gray;
+      }
+
+      @media (max-width: $mobile-width) {
+        display: none;
       }
     }
 
@@ -69,10 +112,14 @@
 
       background-color: $orange;
 
-      @media (max-width: 1199px) {
+      @media (max-width: $tablet-width) {
         padding: 13px rem(16) 11px rem(50);
 
         letter-spacing: 0.9px;
+      }
+
+      @media (max-width: $mobile-width) {
+        padding-left: rem(20);
       }
 
       &::before {
@@ -92,11 +139,15 @@
         border-width: 13px 13px 0 13px;
         border-color: $orange transparent transparent transparent;
 
-        @media (max-width: 1199px) {
+        @media (max-width: $tablet-width) {
           left: 16px;
           bottom: -9px;
 
           border-width: 9px 9px 0 9px;
+        }
+
+        @media (max-width: $mobile-width) {
+          display: none;
         }
       }
     }
@@ -133,10 +184,73 @@
     font-weight: 700;
     letter-spacing: 0.6px;
 
-    @media (max-width: 1199px) {
+    @media (max-width: $tablet-width) {
       margin-bottom: 10px;
 
       font-size: rem(32);
+    }
+
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  &__top-bar {
+    display: none;
+
+    @media (max-width: $mobile-width) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__nav-button {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    margin: 0;
+
+    font-size: rem(18);
+    font-weight: 700;
+    text-align: center;
+    color: inherit;
+
+    .checkout__nav-icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      display: block;
+      width: 10px;
+      height: 17px;
+
+      transform: translateY(-50%);
+
+      &::before,
+      &::after {
+        content: "";
+
+        position: absolute;
+        left: 4px;
+
+        width: 2px;
+        height: 12px;
+
+        background-color: $dark-gray;
+      }
+
+      &::before {
+        top: -1px;
+
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: -1px;
+
+        transform: rotate(-45deg);
+      }
     }
   }
 
@@ -147,10 +261,15 @@
     font-size: rem(20);
     font-weight: 700;
 
-    @media (max-width: 1199px) {
+    @media (max-width: $tablet-width) {
       margin-bottom: 17px;
-      
+
       font-size: rem(16);
+    }
+
+    @media (max-width: $mobile-width) {
+      flex-wrap: wrap;
+      margin-bottom: 0;
     }
   }
 
@@ -160,10 +279,90 @@
 
     color: $dark-gray;
 
+    @media (max-width: $mobile-width) {
+      width: 100%;
+
+      color: $black;
+
+      .checkout__tab-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--sign-up {
+      @media (max-width: $mobile-width) {
+        position: relative;
+
+        padding-top: 13px;
+
+        letter-spacing: 0.6px;
+
+        border-top: 1px solid $dark-gray;
+
+        .checkout__tab-icon {
+          position: absolute;
+          top: 22px;
+          right: -1px;
+
+          display: block;
+          width: 14px;
+          height: 8px;
+
+          &::before,
+          &::after {
+            content: "";
+
+            position: absolute;
+            top: -1px;
+
+            width: 2px;
+            height: 10px;
+
+            background-color: $dark-gray;
+          }
+
+          &::before {
+            right: 3px;
+
+            transform: rotate(46deg);
+          }
+
+          &::after {
+            left: 3px;
+
+            transform: rotate(-46deg);
+          }
+        }
+
+
+      }
+    }
+
     &--active {
       color: $black;
 
       border-bottom: 2px solid $black;
+
+      @media (max-width: $mobile-width) {
+        border-bottom: none;
+
+        .checkout__tab-icon {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &--sign-in {
+      @media (max-width: $mobile-width) {
+        order: -1;
+        margin-bottom: 16px;
+        padding: 6px 15px 10px;
+
+        color: $white;
+        text-align: center;
+
+        background-color: $orange;
+      }
     }
 
     &:not(:last-child) {
@@ -172,6 +371,18 @@
       @media (max-width: $tablet-width) {
         margin-right: rem(45);
       }
+
+      @media (max-width: $mobile-width) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__section {
+    display: none;
+
+    &--active {
+      display: block;
     }
   }
 }
