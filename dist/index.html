@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="page no-js" lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+<body class="page__body">
+  <div class="page__layout"></div>
+
+<header class="header"></header>
+
+<div class="page__wrapper">
+  <main class="page__main">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Главная</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link">Оформление заказа</a>
+      </li>
+    </ul>
+    <section class="checkout">
+      <ul class="checkout__nav">
+        <li class="checkout__item">
+          <a class="checkout__button checkout__button--active checkout__button--person">Кому доставить</a>
+        </li>
+        <li class="checkout__item">
+          <a href="#" class="checkout__button checkout__button--method">Способ доставки</a>
+        </li>
+        <li class="checkout__item">
+          <a href="#" class="checkout__button checkout__button--payment">Способ оплаты</a>
+        </li>
+        <li class="checkout__item">
+          <a href="#" class="checkout__button checkout__button--confirm">Проверка и подтверждение</a>
+        </li>
+      </ul>
+      <h1 class="checkout__title">Оформление заказа</h1>
+      <div class="checkout__top-bar">
+        <a href="#" class="checkout__nav-button">
+          <i class="checkout__nav-icon"></i>
+          Кому доставить
+        </a>
+      </div>
+    
+    
+      <section class="cart">
+        <h2 class="visually-hidden">Корзина</h2>
+        <div class="cart__top-bar">
+          <b class="cart__order">Ваш заказ</b>
+          <span class="cart__count">3 товара</span>
+        </div>
+        <ul class="cart__list">
+            <li class="cart__item">
+              <a href="#" class="cart__picture">
+                <img src="assets/img/item-01-l.jpg" width="" height="" alt="Фото товара">
+              </a>
+              <div class="cart__item-wrapper">
+                <div class="cart__item-info">
+                  <a href="#" class="cart__link">Кроссовки мужские Nike мужские Nike</a>
+                  <p class="cart__item-color">Черный</p>
+                </div>
+                <p class="cart__item-count">1 шт.</p>
+                <div class="cart__price">
+                  <p class="cart__price-tag">15 000</p>
+                  <p class="cart__discount">Скидка: 330</p>
+                </div>
+              </div>
+              <button class="cart__del-button">Удалить</button>
+            </li>
+            <li class="cart__item">
+              <a href="#" class="cart__picture">
+                <img src="assets/img/item-02-l.jpg" width="" height="" alt="Фото товара">
+              </a>
+              <div class="cart__item-wrapper">
+                <div class="cart__item-info">
+                  <a href="#" class="cart__link">Кроссовки мужские Nike мужские Nike</a>
+                  <p class="cart__item-color">Черный</p>
+                </div>
+                <p class="cart__item-count">1 шт.</p>
+                <div class="cart__price">
+                  <p class="cart__price-tag">3 500</p>
+                  <p class="cart__discount">Скидка: 330</p>
+                </div>
+              </div>
+              <button class="cart__del-button">Удалить</button>
+            </li>
+            <li class="cart__item">
+              <a href="#" class="cart__picture">
+                <img src="assets/img/item-03-l.jpg" width="" height="" alt="Фото товара">
+              </a>
+              <div class="cart__item-wrapper">
+                <div class="cart__item-info">
+                  <a href="#" class="cart__link">Кроссовки мужские Nike мужские Nike</a>
+                  <p class="cart__item-color">Черный</p>
+                </div>
+                <p class="cart__item-count">1 шт.</p>
+                <div class="cart__price">
+                  <p class="cart__price-tag">8 700</p>
+                  <p class="cart__discount">Скидка: 330</p>
+                </div>
+              </div>
+              <button class="cart__del-button">Удалить</button>
+            </li>
+        </ul>
+        <div class="cart__bottom-bar">
+          <form action="" class="cart__promocode" method="post">
+            <label class="cart__input-wrapper">
+              <input class="cart__input" type="text" name="promocode" placeholder="XXXXXXX">
+            </label>
+            <button class="cart__promo-button" type="submit">Применить промокод</button>
+          </form>
+          <p class="cart__sum">Сумма: <span>60 000</span></p>
+        </div>
+      </section>
+    
+      <div class="checkout__customer">
+        <a href="#" class="checkout__customer-button checkout__customer-button--active checkout__customer-button--sign-up" data-type="signUp">
+          <i class="checkout__tab-icon"></i>
+          Для новых покупателей
+        </a>
+        <a href="#" class="checkout__customer-button checkout__customer-button--sign-in" id="sign-in" data-type="signIn">Войти</a>
+      </div>
+    
+      <section class="checkout__section checkout__section--active registration" id="signUp">
+        <form class="registration__form" method="post">
+          <div class="registration__form-wrapper">
+      
+            <label class="registration__input-wrapper">
+              <span class="registration__label">Ваше имя<span>*</span></span>
+              <input type="text" class="registration__input" required>
+            </label>
+      
+            <label class="registration__input-wrapper registration__input-wrapper--phone">
+              <span class="registration__label">Телефон<span>*</span></span>
+              <input type="text" class="registration__input" id="phone" placeholder="+ 7 (___) ___ - __ - __" required>
+              <span class="registration__input-caption">Необходим для уточнения деталей заказа</span>
+            </label>
+      
+            <label class="registration__input-wrapper">
+              <span class="registration__label">Ваша фамилия<span>*</span></span>
+              <input type="text" class="registration__input" required>
+            </label>
+      
+            <label class="registration__input-wrapper registration__input-wrapper--email">
+              <span class="registration__label">E-mail<span>*</span></span>
+              <input type="email" class="registration__input" required>
+              <span class="registration__input-caption">Пришлем информацию о заказе</span>
+            </label>
+      
+          </div>
+          <label class="registration__checkbox-wrapper">
+            <input type="checkbox" class="registration__checkbox">
+            <span class="registration__checkbox-indicator"></span>
+            <p class="registration__checkbox-text">Получать информацию о скидках и секретных распродажах для клиентов FITSENSE.<br> Отличный способ следить за нашими лучшими предложениями.</p>
+          </label>
+          <button class="registration__button" type="submit">Далее</button>
+          <p class="registration__info">Выбрать способ доставки</p>
+        </form>
+      </section>
+      <section class="checkout__section authorization" id="signIn">
+        <form class="authorization__form" method="post">
+          <div class="authorization__form-wrapper">
+      
+            <label class="authorization__input-wrapper">
+              <span class="authorization__label">Логин<span>*</span></span>
+              <input type="text" class="authorization__input">
+            </label>
+      
+            <label class="authorization__input-wrapper">
+              <span class="authorization__label">Пароль<span>*</span></span>
+              <input type="password" class="authorization__input">
+            </label>
+      
+          </div>
+          <button class="authorization__button" type="submit">Войти</button>
+          <p class="authorization__info">Выбрать способ доставки</p>
+        </form>
+      </section>
+    </section>
+    
+  </main>
+</div>
+
+<footer class="footer"></footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
