@@ -129,6 +129,8 @@
   }
 
   &__input-caption {
+    display: block;
+    
     font-size: rem(14);
     color: $dark-gray;
 

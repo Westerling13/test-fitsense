@@ -125,28 +125,28 @@
       </div>
     
       <section class="checkout__section checkout__section--active registration" id="signUp">
-        <form class="registration__form" method="post">
+        <form class="registration__form" method="post" id="reg">
           <div class="registration__form-wrapper">
       
             <label class="registration__input-wrapper">
               <span class="registration__label">Ваше имя<span>*</span></span>
-              <input type="text" class="registration__input" required>
+              <input type="text" class="registration__input" name="name" required>
             </label>
       
             <label class="registration__input-wrapper registration__input-wrapper--phone">
               <span class="registration__label">Телефон<span>*</span></span>
-              <input type="text" class="registration__input" id="phone" placeholder="+ 7 (___) ___ - __ - __" required>
+              <input type="text" class="registration__input" id="phone" placeholder="+ 7 (___) ___ - __ - __" name="phone" required>
               <span class="registration__input-caption">Необходим для уточнения деталей заказа</span>
             </label>
       
             <label class="registration__input-wrapper">
               <span class="registration__label">Ваша фамилия<span>*</span></span>
-              <input type="text" class="registration__input" required>
+              <input type="text" class="registration__input" name="surname" required>
             </label>
       
             <label class="registration__input-wrapper registration__input-wrapper--email">
               <span class="registration__label">E-mail<span>*</span></span>
-              <input type="email" class="registration__input" required>
+              <input type="email" class="registration__input" name="email" required>
               <span class="registration__input-caption">Пришлем информацию о заказе</span>
             </label>
       
@@ -161,17 +161,17 @@
         </form>
       </section>
       <section class="checkout__section authorization" id="signIn">
-        <form class="authorization__form" method="post">
+        <form class="authorization__form" method="post" id="auth">
           <div class="authorization__form-wrapper">
       
             <label class="authorization__input-wrapper">
               <span class="authorization__label">Логин<span>*</span></span>
-              <input type="text" class="authorization__input">
+              <input type="text" class="authorization__input" name="login">
             </label>
       
             <label class="authorization__input-wrapper">
               <span class="authorization__label">Пароль<span>*</span></span>
-              <input type="password" class="authorization__input">
+              <input type="password" class="authorization__input" name="password">
             </label>
       
           </div>

@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import './jquery.mask.min';
+import './jquery.validate.min';
 
 window.jQuery = $;
 
@@ -52,3 +53,62 @@ if ($(window).width() >= 800) {
     registrationSection.slideToggle();
   });
 }
+
+$('#reg').validate({
+  rules: {
+    name: {
+      required: true,
+      minlength: 2
+    },
+    surname: {
+      required: true,
+      minlength: 2
+    },
+    phone: {
+      required: true
+    },
+    email: {
+      required: true
+    }
+  },
+  messages: {
+    name: {
+      required: 'Это поле обязательно для заполнения',
+      minlength: 'Введите не менее 2-х символов'
+    },
+    surname: {
+      required: 'Это поле обязательно для заполнения',
+      minlength: 'Введите не менее 2-х символов'
+    },
+    phone: {
+      required: 'Это поле обязательно для заполнения'
+    },
+    email: {
+      required: 'Это поле обязательно для заполнения',
+      email: 'Введите корректный электронный адрес'
+    }
+  }
+});
+
+$('#auth').validate({
+  rules: {
+    login: {
+      required: true,
+      minlength: 2
+    },
+    password: {
+      required: true,
+      minlength: 8
+    }
+  },
+  messages: {
+    login: {
+      required: 'Это поле обязательно для заполнения',
+      minlength: 'Введите не менее 2-х символов'
+    },
+    password: {
+      required: 'Это поле обязательно для заполнения',
+      minlength: 'Введите не менее 8-х символов'
+    }
+  }
+});
