@@ -9298,19 +9298,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _jquery_mask_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_jquery_mask_min__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _jquery_validate_min__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./jquery.validate.min */ "./src/assets/js/jquery.validate.min.js");
 /* harmony import */ var _jquery_validate_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_jquery_validate_min__WEBPACK_IMPORTED_MODULE_2__);
+ //import './jquery-ui.min';
 
 
 
-window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //$('#tabs').tabs();
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#phone').mask('+7 (000) 000-00-00');
 var customerButtons = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__customer-button');
-var signIn = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__customer-button--sign-in');
-var signUp = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__customer-button--sign-up');
-var layout = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.page__layout');
 var checkoutSections = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__section');
+var layout = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.page__layout');
+var authModalButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#auth-mobile-button');
+var authModal = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#authMobile');
+var reg = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__section--reg');
+var auth = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__section--auth');
+var authButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#auth-button');
+var regButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#reg-button');
+var regButtonMobile = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#reg-button-mobile');
 var checkoutButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__nav-button');
 var checkoutNav = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__nav');
-var registration = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.registration');
 
 function setActive(evt) {
   var dataType = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('type');
@@ -9318,38 +9324,60 @@ function setActive(evt) {
   customerButtons.removeClass('checkout__customer-button--active');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('checkout__customer-button--active');
   checkoutSections.removeClass('checkout__section--active');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#' + dataType).addClass('checkout__section--active');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(dataType).addClass('checkout__section--active');
 }
 
-if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() >= 800) {
-  customerButtons.click(setActive);
-} else {
-  checkoutButton.click(function () {
-    checkoutNav.toggleClass('checkout__nav--active');
-    layout.addClass('page__layout--active');
-    layout.click(function () {
-      layout.removeClass('page__layout--active');
-      checkoutNav.removeClass('checkout__nav--active');
-    });
-  });
-  signIn.click(function (evt) {
-    var authorizationSection = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#' + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('type'));
-    evt.preventDefault();
-    authorizationSection.addClass('checkout__section--active');
-    layout.addClass('page__layout--active');
-    layout.click(function () {
-      layout.removeClass('page__layout--active');
-      authorizationSection.removeClass('checkout__section--active');
-    });
-  });
-  signUp.click(function (evt) {
-    var registrationSection = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#' + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('type'));
-    evt.preventDefault();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggleClass('checkout__customer-button--active');
-    registrationSection.slideToggle();
+function showAuthModal(evt) {
+  evt.preventDefault();
+  authModal.addClass('auth-modal--active');
+  layout.addClass('page__layout--active');
+  regButtonMobile.addClass('checkout__customer-button--active');
+  reg.slideUp();
+  layout.click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('page__layout--active');
+    authModal.removeClass('auth-modal--active');
+    regButtonMobile.removeClass('checkout__customer-button--active');
+    reg.slideDown();
   });
 }
 
+function showMobileNav(evt) {
+  checkoutNav.toggleClass('checkout__nav--active');
+  layout.addClass('page__layout--active');
+  layout.click(function () {
+    layout.removeClass('page__layout--active');
+    checkoutNav.removeClass('checkout__nav--active');
+  });
+}
+
+authButton.click(setActive);
+regButton.click(setActive);
+authModalButton.click(showAuthModal);
+
+if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 800) {
+  checkoutButton.click(showMobileNav);
+  regButtonMobile.click(function () {
+    regButtonMobile.toggleClass('checkout__customer-button--active');
+    reg.slideToggle();
+  });
+}
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(function () {
+  authModal.removeClass('auth-modal--active');
+  layout.removeClass('page__layout--active');
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 800) {
+    reg.addClass('checkout__section--active');
+    auth.removeClass('checkout__section--active');
+  } else {
+    customerButtons.click(setActive);
+    reg.addClass('checkout__section--active');
+    customerButtons.removeClass('checkout__customer-button--active');
+    regButton.addClass('checkout__customer-button--active');
+    authButton.click(setActive);
+    regButton.click(setActive);
+  }
+});
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#reg').validate({
   rules: {
     name: {
@@ -10544,7 +10572,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Westerling\Desktop\Projects\final-test\src\assets\js\app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Alexander\Desktop\Projects\final-test\src\assets\js\app.js */"./src/assets/js/app.js");
 
 
 /***/ })

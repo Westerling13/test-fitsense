@@ -116,67 +116,92 @@
         </div>
       </section>
     
-      <div class="checkout__customer">
-        <a href="#" class="checkout__customer-button checkout__customer-button--active checkout__customer-button--sign-up" data-type="signUp">
+      <div class="checkout__customer" id="tabs">
+        <a href="#tabs-1" class="checkout__customer-button checkout__customer-button--active checkout__customer-button--reg" id="reg-button" data-type="#signUp">
+          Для новых покупателей
+        </a>
+        <a href="#tabs-2" class="checkout__customer-button checkout__customer-button--auth" id="auth-button" data-type="#signIn">Войти</a>
+      </div>
+      <div class="checkout__customer checkout__customer--mobile">
+        <a href="#" class="checkout__customer-button checkout__customer-button--active checkout__customer-button--reg" id="reg-button-mobile">
           <i class="checkout__tab-icon"></i>
           Для новых покупателей
         </a>
-        <a href="#" class="checkout__customer-button checkout__customer-button--sign-in" id="sign-in" data-type="signIn">Войти</a>
+        <a href="#" class="checkout__customer-button checkout__customer-button--mobile" id="auth-mobile-button">Войти</a>
       </div>
     
-      <section class="checkout__section checkout__section--active registration" id="signUp">
-        <form class="registration__form" method="post" id="reg">
-          <div class="registration__form-wrapper">
+      <section class="checkout__section checkout__section--active checkout__section--reg user-section" id="signUp">
+        <form class="user-section__form" method="post" id="reg">
+          <div class="user-section__form-wrapper">
       
-            <label class="registration__input-wrapper">
-              <span class="registration__label">Ваше имя<span>*</span></span>
-              <input type="text" class="registration__input" name="name" required>
+            <label class="user-section__input-wrapper">
+              <span class="user-section__label">Ваше имя<span>*</span></span>
+              <input type="text" class="user-section__input" name="name" required>
             </label>
       
-            <label class="registration__input-wrapper registration__input-wrapper--phone">
-              <span class="registration__label">Телефон<span>*</span></span>
-              <input type="text" class="registration__input" id="phone" placeholder="+ 7 (___) ___ - __ - __" name="phone" required>
-              <span class="registration__input-caption">Необходим для уточнения деталей заказа</span>
+            <label class="user-section__input-wrapper user-section__input-wrapper--phone">
+              <span class="user-section__label">Телефон<span>*</span></span>
+              <input type="text" class="user-section__input" id="phone" placeholder="+ 7 (___) ___ - __ - __" name="phone" required>
+              <span class="user-section__input-caption">Необходим для уточнения деталей заказа</span>
             </label>
       
-            <label class="registration__input-wrapper">
-              <span class="registration__label">Ваша фамилия<span>*</span></span>
-              <input type="text" class="registration__input" name="surname" required>
+            <label class="user-section__input-wrapper">
+              <span class="user-section__label">Ваша фамилия<span>*</span></span>
+              <input type="text" class="user-section__input" name="surname" required>
             </label>
       
-            <label class="registration__input-wrapper registration__input-wrapper--email">
-              <span class="registration__label">E-mail<span>*</span></span>
-              <input type="email" class="registration__input" name="email" required>
-              <span class="registration__input-caption">Пришлем информацию о заказе</span>
+            <label class="user-section__input-wrapper user-section__input-wrapper--email">
+              <span class="user-section__label">E-mail<span>*</span></span>
+              <input type="email" class="user-section__input" name="email" required>
+              <span class="user-section__input-caption">Пришлем информацию о заказе</span>
             </label>
       
           </div>
-          <label class="registration__checkbox-wrapper">
-            <input type="checkbox" class="registration__checkbox">
-            <span class="registration__checkbox-indicator"></span>
-            <p class="registration__checkbox-text">Получать информацию о скидках и секретных распродажах для клиентов FITSENSE.<br> Отличный способ следить за нашими лучшими предложениями.</p>
+          <label class="user-section__checkbox-wrapper">
+            <input type="checkbox" class="user-section__checkbox">
+            <span class="user-section__checkbox-indicator"></span>
+            <p class="user-section__checkbox-text">Получать информацию о скидках и секретных распродажах для клиентов FITSENSE.<br> Отличный способ следить за нашими лучшими предложениями.</p>
           </label>
-          <button class="registration__button" type="submit">Далее</button>
-          <p class="registration__info">Выбрать способ доставки</p>
+          <button class="user-section__button" type="submit">Далее</button>
+          <p class="user-section__info">Выбрать способ доставки</p>
         </form>
       </section>
-      <section class="checkout__section authorization" id="signIn">
-        <form class="authorization__form" method="post" id="auth">
-          <div class="authorization__form-wrapper">
+      <section class="checkout__section checkout__section--auth user-section" id="signIn">
+        <form class="user-section__form" method="post" id="auth">
+          <div class="user-section__form-wrapper">
       
-            <label class="authorization__input-wrapper">
-              <span class="authorization__label">Логин<span>*</span></span>
-              <input type="text" class="authorization__input" name="login">
+            <label class="user-section__input-wrapper">
+              <span class="user-section__label">Логин<span>*</span></span>
+              <input type="text" class="user-section__input" name="login">
             </label>
       
-            <label class="authorization__input-wrapper">
-              <span class="authorization__label">Пароль<span>*</span></span>
-              <input type="password" class="authorization__input" name="password">
+            <label class="user-section__input-wrapper">
+              <span class="user-section__label">Пароль<span>*</span></span>
+              <input type="password" class="user-section__input" name="password">
             </label>
       
           </div>
-          <button class="authorization__button" type="submit">Войти</button>
-          <p class="authorization__info">Выбрать способ доставки</p>
+          <button class="user-section__button" type="submit">Войти</button>
+          <p class="user-section__info">Выбрать способ доставки</p>
+        </form>
+      </section>
+      <section class="auth-modal" id="authMobile">
+        <form class="auth-modal__form" method="post" id="authMobileForm">
+          <div class="auth-modal__form-wrapper">
+      
+            <label class="auth-modal__input-wrapper">
+              <span class="auth-modal__label">Логин<span>*</span></span>
+              <input type="text" class="auth-modal__input" name="login">
+            </label>
+      
+            <label class="auth-modal__input-wrapper">
+              <span class="auth-modal__label">Пароль<span>*</span></span>
+              <input type="password" class="auth-modal__input" name="password">
+            </label>
+      
+          </div>
+          <button class="auth-modal__button" type="submit">Войти</button>
+          <p class="auth-modal__info">Выбрать способ доставки</p>
         </form>
       </section>
     </section>

@@ -20,7 +20,7 @@
     flex-wrap: wrap;
     margin: 0 0 39px;
     padding: 0;
-    
+
     @media (max-width: $tablet-width) {
       margin-bottom: 20px;
     }
@@ -31,20 +31,32 @@
       left: 0;
       z-index: 100;
 
-      display: none;
       width: 100vw;
       margin-bottom: 0;
 
       background-color: $white;
 
-      animation-name: slideInLeft;
-      animation-duration: 1s;
-      animation-fill-mode: both;
+      transform: translateX(-100%);
+      transition: transform 700ms ease;
     }
 
     &--active {
       display: block;
+
+      transform: translateX(0);
+
+      // animation-name: slideInLeft;
+      // animation-duration: 1s;
+      // animation-fill-mode: both;
     }
+
+    // &--fade {
+    //   display: none;
+    //
+    //   animation-name: slideOutLeft;
+    //   animation-duration: 1s;
+    //   animation-fill-mode: both;
+    // }
   }
 
   &__item:not(:last-child) {
@@ -268,8 +280,18 @@
     }
 
     @media (max-width: $mobile-width) {
+      display: none;
+
       flex-wrap: wrap;
       margin-bottom: 0;
+    }
+
+    &--mobile {
+      display: none;
+
+      @media (max-width: $mobile-width) {
+        display: flex;
+      }
     }
   }
 
@@ -289,7 +311,7 @@
       }
     }
 
-    &--sign-up {
+    &--reg {
       @media (max-width: $mobile-width) {
         position: relative;
 
@@ -352,8 +374,17 @@
       }
     }
 
-    &--sign-in {
+    &--auth {
       @media (max-width: $mobile-width) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media (max-width: $mobile-width) {
+        display: block;
         order: -1;
         margin-bottom: 16px;
         padding: 6px 15px 10px;
