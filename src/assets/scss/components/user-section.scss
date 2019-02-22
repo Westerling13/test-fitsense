@@ -130,16 +130,13 @@
 
   &__input-caption {
     display: block;
+    padding-top: 3px;
 
     font-size: rem(14);
     color: $dark-gray;
 
     @media (max-width: $tablet-width) {
       font-size: rem(12);
-    }
-
-    @media (max-width: $mobile-width) {
-      padding-top: 3px;
     }
   }
 

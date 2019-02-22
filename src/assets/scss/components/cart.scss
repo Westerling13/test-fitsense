@@ -170,12 +170,12 @@
 
   &__item-count {
     min-width: rem(40);
-    margin: 0 rem(99) 0 0;
+    margin: 0 rem(94) 0 0;
 
     line-height: rem(18);
 
     @media (max-width: $tablet-width) {
-      margin-right: rem(78);
+      margin-right: rem(67);
 
       font-size: rem(12);
     }
