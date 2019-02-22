@@ -1,35 +1,39 @@
 import $ from 'jquery';
-//import './jquery-ui.min';
 import './jquery.mask.min';
 import './jquery.validate.min';
 
 window.jQuery = $;
 
-//$('#tabs').tabs();
-
 $('#phone').mask('+7 (000) 000-00-00');
 
-var customerButtons = $('.checkout__customer-button');
+var checkoutTabs = $('.checkout__tab');
 var checkoutSections = $('.checkout__section');
 var layout = $('.page__layout');
-var authModalButton = $('#auth-mobile-button');
-var authModal = $('#authMobile');
+var authModalButton = $('#auth-modal-button');
+var authModal = $('#auth-modal');
 var reg = $('.checkout__section--reg');
 var auth = $('.checkout__section--auth');
 var authButton = $('#auth-button');
 var regButton = $('#reg-button');
 var regButtonMobile = $('#reg-button-mobile');
 
-var checkoutButton = $('.checkout__nav-button');
+var checkoutNavButton = $('.checkout__nav-button');
 var checkoutNav = $('.checkout__nav');
 
 function setActive(evt) {
   var dataType = $(this).data('type');
   evt.preventDefault();
-  customerButtons.removeClass('checkout__customer-button--active');
-  $(this).addClass('checkout__customer-button--active');
+  checkoutTabs.removeClass('checkout__tab--active');
+  $(this).addClass('checkout__tab--active');
   checkoutSections.removeClass('checkout__section--active');
   $(dataType).addClass('checkout__section--active');
+}
+
+function setActiveMobile(evt) {
+  var dataType = $(this).data('type');
+  evt.preventDefault();
+  $(this).toggleClass('checkout__tab-mobile--active');
+  reg.slideToggle();
 }
 
 function showAuthModal(evt) {
@@ -47,6 +51,7 @@ function showAuthModal(evt) {
 }
 
 function showMobileNav(evt) {
+  evt.preventDefault();
   checkoutNav.toggleClass('checkout__nav--active');
   layout.addClass('page__layout--active');
   layout.click(function() {
@@ -57,15 +62,9 @@ function showMobileNav(evt) {
 
 authButton.click(setActive);
 regButton.click(setActive);
+regButtonMobile.click(setActiveMobile);
 authModalButton.click(showAuthModal);
-
-if ($(window).width() < 800) {
-  checkoutButton.click(showMobileNav);
-  regButtonMobile.click(function() {
-    regButtonMobile.toggleClass('checkout__customer-button--active');
-    reg.slideToggle();
-  });
-}
+checkoutNavButton.click(showMobileNav);
 
 $(window).resize(function() {
   authModal.removeClass('auth-modal--active');
@@ -75,12 +74,11 @@ $(window).resize(function() {
     reg.addClass('checkout__section--active');
     auth.removeClass('checkout__section--active');
   } else {
-    customerButtons.click(setActive);
-    reg.addClass('checkout__section--active');
-    customerButtons.removeClass('checkout__customer-button--active');
-    regButton.addClass('checkout__customer-button--active');
+    reg.slideDown();
+    regButton.addClass('checkout__tab--active');
     authButton.click(setActive);
     regButton.click(setActive);
+    checkoutNav.removeClass('checkout__nav--active');
   }
 });
 
@@ -121,6 +119,29 @@ $('#reg').validate({
 });
 
 $('#auth').validate({
+  rules: {
+    login: {
+      required: true,
+      minlength: 2
+    },
+    password: {
+      required: true,
+      minlength: 8
+    }
+  },
+  messages: {
+    login: {
+      required: 'Это поле обязательно для заполнения',
+      minlength: 'Введите не менее 2-х символов'
+    },
+    password: {
+      required: 'Это поле обязательно для заполнения',
+      minlength: 'Введите не менее 8-х символов'
+    }
+  }
+});
+
+$('#auth-mobile').validate({
   rules: {
     login: {
       required: true,

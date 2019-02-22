@@ -137,6 +137,10 @@
     @media (max-width: $tablet-width) {
       font-size: rem(12);
     }
+
+    @media (max-width: $mobile-width) {
+      padding-top: 3px;
+    }
   }
 
   &__checkbox-wrapper {

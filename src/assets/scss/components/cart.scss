@@ -104,7 +104,7 @@
     }
 
     @media (max-width: $mobile-width) {
-      width: 30px;
+      width: rem(30);
       margin-right: rem(25);
     }
   }
@@ -298,10 +298,6 @@
 
     @media (max-width: $tablet-width) {
       margin-bottom: 10px;
-    }
-
-    @media (max-width: $mobile-width) {
-      //flex-wrap: wrap;
     }
   }
 

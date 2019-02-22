@@ -24,21 +24,21 @@
 
   {{> cart}}
 
-  <div class="checkout__customer" id="tabs">
-    <a href="#tabs-1" class="checkout__customer-button checkout__customer-button--active checkout__customer-button--reg" id="reg-button" data-type="#signUp">
+  <div class="checkout__tabs" id="tabs">
+    <a href="#tabs-1" class="checkout__tab checkout__tab--active" id="reg-button" data-type="#signUp">
       Для новых покупателей
     </a>
-    <a href="#tabs-2" class="checkout__customer-button checkout__customer-button--auth" id="auth-button" data-type="#signIn">Войти</a>
+    <a href="#tabs-2" class="checkout__tab" id="auth-button" data-type="#signIn">Войти</a>
   </div>
-  <div class="checkout__customer checkout__customer--mobile">
-    <a href="#" class="checkout__customer-button checkout__customer-button--active checkout__customer-button--reg" id="reg-button-mobile">
+  <div class="checkout__tabs checkout__tabs--mobile">
+    <a href="#" class="checkout__button-mobile" id="auth-modal-button" >Войти</a>
+    <a href="#" class="checkout__tab-mobile checkout__tab-mobile--active" id="reg-button-mobile" data-type="#signUp">
       <i class="checkout__tab-icon"></i>
       Для новых покупателей
     </a>
-    <a href="#" class="checkout__customer-button checkout__customer-button--mobile" id="auth-mobile-button">Войти</a>
   </div>
 
   {{> registration}}
   {{> authorization}}
-  {{> authModal}}
+  {{> auth-modal}}
 </section>
