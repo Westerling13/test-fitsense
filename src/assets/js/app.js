@@ -4,6 +4,7 @@ import './jquery.validate.min';
 
 window.jQuery = $;
 
+//маска для телефона
 $('#phone').mask('+7 (000) 000-00-00');
 
 var checkoutTabs = $('.checkout__tab');
@@ -20,6 +21,7 @@ var regButtonMobile = $('#reg-button-mobile');
 var checkoutNavButton = $('.checkout__nav-button');
 var checkoutNav = $('.checkout__nav');
 
+//коллбэк для установки активного таба
 function setActive(evt) {
   var dataType = $(this).data('type');
   evt.preventDefault();
@@ -29,6 +31,7 @@ function setActive(evt) {
   $(dataType).addClass('checkout__section--active');
 }
 
+//коллбэк для установки активного таба на мобильных
 function setActiveMobile(evt) {
   var dataType = $(this).data('type');
   evt.preventDefault();
@@ -36,20 +39,18 @@ function setActiveMobile(evt) {
   reg.slideToggle();
 }
 
+//коллбэк для вызова модалки с авторизацией на мобильных
 function showAuthModal(evt) {
   evt.preventDefault();
   authModal.addClass('auth-modal--active');
   layout.addClass('page__layout--active');
-  regButtonMobile.addClass('checkout__customer-button--active');
-  reg.slideUp();
   layout.click(function() {
     $(this).removeClass('page__layout--active');
     authModal.removeClass('auth-modal--active');
-    regButtonMobile.removeClass('checkout__customer-button--active');
-    reg.slideDown();
   });
 }
 
+//коллбэк для вызова меню навигации на мобильных
 function showMobileNav(evt) {
   evt.preventDefault();
   checkoutNav.toggleClass('checkout__nav--active');
@@ -67,21 +68,18 @@ authModalButton.click(showAuthModal);
 checkoutNavButton.click(showMobileNav);
 
 $(window).resize(function() {
-  authModal.removeClass('auth-modal--active');
-  layout.removeClass('page__layout--active');
-
   if ($(window).width() < 800) {
-    reg.addClass('checkout__section--active');
-    auth.removeClass('checkout__section--active');
+    auth.css('display', 'none');
   } else {
-    reg.slideDown();
-    regButton.addClass('checkout__tab--active');
-    authButton.click(setActive);
-    regButton.click(setActive);
+    authModal.removeClass('auth-modal--active');
+    auth.removeAttr('style');
+    reg.removeAttr('style');
+    layout.removeClass('page__layout--active');
     checkoutNav.removeClass('checkout__nav--active');
   }
 });
 
+//валидация формы регистрации
 $('#reg').validate({
   rules: {
     name: {
@@ -118,6 +116,7 @@ $('#reg').validate({
   }
 });
 
+//валидация формы авторизации
 $('#auth').validate({
   rules: {
     login: {
@@ -141,6 +140,7 @@ $('#auth').validate({
   }
 });
 
+//валидация формы авторизации на мобильных
 $('#auth-mobile').validate({
   rules: {
     login: {

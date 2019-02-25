@@ -20,6 +20,8 @@
     line-height: 1.5;
     font-weight: 400;
     color: $black;
+
+    background-color: $white;
   }
 
   &__wrapper {
@@ -34,18 +36,20 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: -1;
 
-    display: none;
     width: 100vw;
     height: 100vh;
 
     background-color: rgba($black, 0.4);
+    opacity: 0;
 
     transition: $global-transition;
 
     &--active {
-      display: block;
+      z-index: 10;
+
+      opacity: 1;
     }
   }
 }

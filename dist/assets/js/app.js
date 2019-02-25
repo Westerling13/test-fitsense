@@ -9301,7 +9301,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //маска для телефона
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#phone').mask('+7 (000) 000-00-00');
 var checkoutTabs = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__tab');
 var checkoutSections = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__section');
@@ -9314,7 +9315,7 @@ var authButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#auth-button');
 var regButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#reg-button');
 var regButtonMobile = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#reg-button-mobile');
 var checkoutNavButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__nav-button');
-var checkoutNav = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__nav');
+var checkoutNav = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout__nav'); //коллбэк для установки активного таба
 
 function setActive(evt) {
   var dataType = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('type');
@@ -9323,28 +9324,27 @@ function setActive(evt) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('checkout__tab--active');
   checkoutSections.removeClass('checkout__section--active');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(dataType).addClass('checkout__section--active');
-}
+} //коллбэк для установки активного таба на мобильных
+
 
 function setActiveMobile(evt) {
   var dataType = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('type');
   evt.preventDefault();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggleClass('checkout__tab-mobile--active');
   reg.slideToggle();
-}
+} //коллбэк для вызова модалки с авторизацией на мобильных
+
 
 function showAuthModal(evt) {
   evt.preventDefault();
   authModal.addClass('auth-modal--active');
   layout.addClass('page__layout--active');
-  regButtonMobile.addClass('checkout__customer-button--active');
-  reg.slideUp();
   layout.click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('page__layout--active');
     authModal.removeClass('auth-modal--active');
-    regButtonMobile.removeClass('checkout__customer-button--active');
-    reg.slideDown();
   });
-}
+} //коллбэк для вызова меню навигации на мобильных
+
 
 function showMobileNav(evt) {
   evt.preventDefault();
@@ -9362,20 +9362,17 @@ regButtonMobile.click(setActiveMobile);
 authModalButton.click(showAuthModal);
 checkoutNavButton.click(showMobileNav);
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(function () {
-  authModal.removeClass('auth-modal--active');
-  layout.removeClass('page__layout--active');
-
   if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 800) {
-    reg.addClass('checkout__section--active');
-    auth.removeClass('checkout__section--active');
+    auth.css('display', 'none');
   } else {
-    reg.slideDown();
-    regButton.addClass('checkout__tab--active');
-    authButton.click(setActive);
-    regButton.click(setActive);
+    authModal.removeClass('auth-modal--active');
+    auth.removeAttr('style');
+    reg.removeAttr('style');
+    layout.removeClass('page__layout--active');
     checkoutNav.removeClass('checkout__nav--active');
   }
-});
+}); //валидация формы регистрации
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#reg').validate({
   rules: {
     name: {
@@ -9410,7 +9407,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#reg').validate({
       email: 'Введите корректный электронный адрес'
     }
   }
-});
+}); //валидация формы авторизации
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#auth').validate({
   rules: {
     login: {
@@ -9432,7 +9430,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#auth').validate({
       minlength: 'Введите не менее 8-х символов'
     }
   }
-});
+}); //валидация формы авторизации на мобильных
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#auth-mobile').validate({
   rules: {
     login: {

@@ -2,23 +2,24 @@
   position: relative;
 
   width: 100%;
-  padding: 18px rem(100) 0;
+  padding: rem(18) rem(100) 0;
 
   font-size: rem(15);
 
   @media (max-width: $tablet-width) {
-    padding: 15px rem(20) 0;
+    padding: rem(15) rem(20) 0;
     font-size: rem(12);
   }
 
   @media (max-width: $mobile-width) {
-    padding: 40px rem(16) 0;
+    padding: rem(40) rem(16) 0;
   }
 
   &__nav {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 39px;
+    // margin: 0 0 39px;
+    margin: 0 0 rem(39);
     padding: 0;
 
     @media (max-width: $tablet-width) {
@@ -311,7 +312,7 @@
 
     display: block;
     width: 100%;
-    padding-top: 13px;
+    padding-top: rem(13);
 
     letter-spacing: 0.6px;
     color: $black;
@@ -321,14 +322,14 @@
 
     .checkout__tab-icon {
       position: absolute;
-      top: 22px;
+      top: 70%;
       right: -1px;
 
       display: block;
       width: 14px;
       height: 8px;
 
-      transform: rotate(180deg);
+      transform: translateY(-50%) rotate(180deg);
 
       &::before,
       &::after {
@@ -358,7 +359,7 @@
 
     &--active {
       .checkout__tab-icon {
-        transform: rotate(0);
+        transform: translateY(-50%) rotate(0);
       }
     }
   }
