@@ -1,6 +1,6 @@
 .auth-modal {
   display: none;
-  padding: 15px 0 100px;
+  padding: rem(15) 0 rem(100);
 
   font-size: rem(16);
 
@@ -17,7 +17,7 @@
     z-index: 100;
 
     width: 80%;
-    padding: 20px;
+    padding: rem(20);
 
     font-size: rem(14);
 
@@ -35,7 +35,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: baseline;
-    max-width: 865px;
+    max-width: rem(865);
     width: 100%;
     margin: 0;
   }
@@ -44,35 +44,35 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0 0 4px;
+    margin: 0 0 rem(4);
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 2px;
+      margin-bottom: rem(2);
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 6px;
+      margin-bottom: rem(6);
     }
   }
 
   &__input-wrapper {
     display: block;
-    max-width: 407px;
+    max-width: rem(407);
     width: 47%;
-    min-height: 100px;
-    margin: 0 rem(50) 12px 0;
+    min-height: rem(100);
+    margin: 0 rem(50) rem(12) 0;
 
     @media (max-width: $tablet-width) {
       width: 43%;
-      min-height: 83px;
-      margin: 0 rem(42) 8px 0;
+      min-height: rem(83);
+      margin: 0 rem(42) rem(8) 0;
     }
 
     @media (max-width: $mobile-width) {
       max-width: none;
       width: 100%;
       min-height: auto;
-      margin: 0 0 15px;
+      margin: 0 0 rem(15);
     }
 
     &:nth-child(even) {
@@ -82,10 +82,10 @@
 
   &__label {
     display: block;
-    margin: 0 0 10px;
+    margin: 0 0 rem(10);
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 7px;
+      margin-bottom: rem(7);
     }
 
     span {
@@ -96,7 +96,7 @@
   &__input {
     width: 100%;
     margin: 0 0 3px;
-    padding: 12px 14px;
+    padding: rem(12) rem(14);
 
     font-family: inherit;
     font-size: rem(14);
@@ -106,7 +106,7 @@
     background-color: $light-gray;
 
     @media (max-width: $tablet-width) {
-      padding: 4px 10px 6px;
+      padding: rem(4) rem(10) rem(6);
 
       font-size: rem(12);
       line-height: rem(20);
@@ -114,7 +114,7 @@
 
     @media (max-width: $mobile-width) {
       margin-bottom: 0;
-      padding: 10px 13px;
+      padding: rem(10) rem(13);
 
       font-size: rem(14);
       line-height: rem(20);
@@ -144,16 +144,16 @@
     }
   }
   &__button {
-    margin: 0 30px 0 0;
-    padding: 13px 57px 19px;
+    margin: 0 rem(30) 0 0;
+    padding: rem(13) rem(57) rem(19);
     color: $white;
 
     background-color: $orange;
     cursor: pointer;
 
     @media (max-width: $tablet-width) {
-      margin-right: 25px;
-      padding: 9px 41px 11px;
+      margin-right: rem(25);
+      padding: rem(9) rem(41) rem(11x;
 
       font-size: rem(16);
     }
@@ -161,7 +161,7 @@
     @media (max-width: $mobile-width) {
       width: 100%;
       margin-right: 0;
-      padding: 6px 15px 10px;
+      padding: rem(6) rem(15) rem(10);
 
       font-size: rem(16);
     }

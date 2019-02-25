@@ -1,5 +1,5 @@
 .user-section {
-  padding: 15px 0 100px;
+  padding: rem(15) 0 rem(100);
   font-size: rem(16);
 
   @media (max-width: $tablet-width) {
@@ -7,7 +7,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding: 6px 0 100px;
+    padding: rem(6) 0 rem(100);
     font-size: rem(14);
   }
 
@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: baseline;
-    max-width: 865px;
+    max-width: rem(865);
     width: 100%;
     margin: 0;
   }
@@ -25,35 +25,35 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0 0 4px;
+    margin: 0 0 rem(4);
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 2px;
+      margin-bottom: rem(2);
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 6px;
+      margin-bottom: rem(6);
     }
   }
 
   &__input-wrapper {
     display: block;
-    max-width: 407px;
+    max-width: rem(407);
     width: 47%;
-    min-height: 100px;
-    margin: 0 rem(50) 12px 0;
+    min-height: rem(100);
+    margin: 0 rem(50) rem(12) 0;
 
     @media (max-width: $tablet-width) {
       width: 43%;
-      min-height: 83px;
-      margin: 0 rem(42) 8px 0;
+      min-height: rem(83);
+      margin: 0 rem(42) rem(8) 0;
     }
 
     @media (max-width: $mobile-width) {
       max-width: none;
       width: 100%;
       min-height: auto;
-      margin: 0 0 15px;
+      margin: 0 0 rem(15);
     }
 
     &:nth-child(even) {
@@ -75,10 +75,10 @@
 
   &__label {
     display: block;
-    margin: 0 0 10px;
+    margin: 0 0 rem(10);
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 7px;
+      margin-bottom: rem(7);
     }
 
     span {
@@ -88,8 +88,8 @@
 
   &__input {
     width: 100%;
-    margin: 0 0 3px;
-    padding: 12px 14px;
+    margin: 0 0 rem(3);
+    padding: rem(12) rem(14);
 
     font-family: inherit;
     font-size: rem(14);
@@ -99,7 +99,7 @@
     background-color: $light-gray;
 
     @media (max-width: $tablet-width) {
-      padding: 4px 10px 6px;
+      padding: rem(4) rem(10) rem(6);
 
       font-size: rem(12);
       line-height: rem(20);
@@ -107,7 +107,7 @@
 
     @media (max-width: $mobile-width) {
       margin-bottom: 0;
-      padding: 10px 13px;
+      padding: rem(10) rem(13);
 
       font-size: rem(14);
       line-height: rem(20);
@@ -130,7 +130,7 @@
 
   &__input-caption {
     display: block;
-    padding-top: 3px;
+    padding-top: rem(3);
 
     font-size: rem(14);
     color: $dark-gray;
@@ -143,16 +143,16 @@
   &__checkbox-wrapper {
     display: flex;
     width: 100%;
-    margin: 0 0 53px;
+    margin: 0 0 rem(53);
 
     cursor: pointer;
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 44px;
+      margin-bottom: rem(44);
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 23px;
+      margin-bottom: rem(23);
     }
   }
 
@@ -182,51 +182,55 @@
 
     display: block;
     flex-shrink: 0;
-    width: 25px;
-    height: 25px;
-    margin: 5px 21px 0 0;
+    width: rem(25);
+    height: rem(25);
+    margin: rem(5) rem(21) 0 0;
 
     background-color: $light-gray;
 
     @media (max-width: $tablet-width) {
-      width: 21px;
-      height: 21px;
-      margin: 3px 16px 0 0;
+      width: rem(21);
+      height: rem(21);
+      margin: rem(3) rem(16) 0 0;
     }
 
     @media (max-width: $mobile-width) {
-      width: 25px;
-      height: 25px;
-      margin-right: 13px;
-    }
-
-    &::before,
-    &::after {
-      content: "";
-
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      width: 20px;
-      height: 2px;
-
-      background-color: $black;
-      opacity: 0;
-
-      transition: $global-transition;
-
-      @media (max-width: $tablet-width) {
-        width: 17px;
-      }
+      width: rem(25);
+      height: rem(25);
+      margin-right: rem(13);
     }
 
     &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
+      content: "\2713";
 
-    &::after {
-      transform: translate(-50%, -50%) rotate(135deg);
+      position: absolute;
+      left: 50%;
+      top: 0;
+
+      width: rem(20);
+      height: rem(25);
+
+      font-size: rem(25);
+      line-height: rem(25);
+
+      opacity: 0;
+
+      transform: translateX(-50%   );
+      transition: $global-transition;
+
+      @media (max-width: $tablet-width) {
+        width: rem(16);
+        height: rem(21);
+        font-size: rem(22);
+        line-height: rem(22);
+      }
+
+      @media (max-width: $mobile-width) {
+        width: rem(20);
+        height: rem(25);
+        font-size: rem(25);
+        line-height: rem(25);
+      }
     }
   }
 
@@ -250,16 +254,16 @@
   }
 
   &__button {
-    margin: 0 30px 0 0;
-    padding: 13px 57px 19px;
+    margin: 0 rem(30) 0 0;
+    padding: rem(13) rem(57) rem(19);
     color: $white;
 
     background-color: $orange;
     cursor: pointer;
 
     @media (max-width: $tablet-width) {
-      margin-right: 25px;
-      padding: 9px 41px 11px;
+      margin-right: rem(25);
+      padding: rem(9) rem(41) rem(11);
 
       font-size: rem(16);
     }
@@ -267,7 +271,7 @@
     @media (max-width: $mobile-width) {
       width: 100%;
       margin-right: 0;
-      padding: 6px 15px 10px;
+      padding: rem(6) rem(15) rem(10);
 
       font-size: rem(16);
     }

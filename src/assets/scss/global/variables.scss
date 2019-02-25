@@ -19,9 +19,10 @@ $button-disabled-color: #a6a6a6;
 $main-font-family: 'Noto Sans', Arial, sans-serif;
 // media
 
+$min-mobile-width: 360px;
 $mobile-width: 799px;
 $tablet-width: 1199px;
-$desktop-width: 1199px;
+$desktop-width: 1200px;
 
 // transition
 $global-transition: all 200ms ease-out;

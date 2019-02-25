@@ -9,7 +9,7 @@
     font-size: 16 / 320 * 100vw;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: $min-mobile-width) {
     font-size: rem(16);
   }
 

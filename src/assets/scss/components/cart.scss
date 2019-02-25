@@ -1,33 +1,33 @@
 .cart {
-  max-width: 660px;
-  padding: 16px 0 39px;
+  max-width: rem(660);
+  padding: rem(16) 0 rem(39);
 
   font-size: rem(14);
 
   @media (max-width: $tablet-width) {
-    padding-bottom: 31px;
+    padding-bottom: rem(31);
   }
 
   @media (max-width: $mobile-width) {
-    padding: 18px 0 18px;
+    padding: rem(18) 0;
   }
 
   &__top-bar {
     width: 100%;
-    padding: 0 0 11px;
+    padding: 0 0 rem(11);
 
     font-size: rem(20);
 
     border-bottom: 1px solid $dark-gray;
 
     @media (max-width: $tablet-width) {
-      padding-bottom: 9px;
+      padding-bottom: rem(9);
 
       font-size: rem(16);
     }
 
     @media (max-width: $mobile-width) {
-      padding-bottom: 6px;
+      padding-bottom: rem(6);
     }
   }
 
@@ -50,17 +50,17 @@
   }
 
   &__list {
-    margin: 0 0 32px;
-    padding: 21px 0 0;
+    margin: 0 0 rem(32);
+    padding: rem(21) 0 0;
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 22px;
-      padding-top: 17px;
+      margin-bottom: rem(22);
+      padding-top: rem(17);
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 16px;
-      padding: 13px 0 16px;
+      margin-bottom: rem(16);
+      padding: rem(13) 0 rem(16);
 
       border-bottom: 1px solid $dark-gray;
     }
@@ -70,14 +70,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 0 0 25px;
+    margin: 0 0 rem(25);
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 17px;
+      margin-bottom: rem(17);
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 25px;
+      margin-bottom: rem(25);
 
       &:last-child {
         margin-bottom: 0;
@@ -91,15 +91,15 @@
 
   &__picture {
     display: block;
-    width: 50px;
+    width: rem(50);
     flex-shrink: 0;
     align-self: center;
     margin-right: rem(18);
 
     @media (max-width: $tablet-width) {
-      width: 39px;
+      width: rem(39);
       align-self: auto;
-      margin-top: 4px;
+      margin-top: rem(4);
       margin-right: rem(16);
     }
 
@@ -121,7 +121,7 @@
   }
 
   &__item-info {
-    max-width: 250px;
+    max-width: rem(250);
     margin-right: rem(25);
 
     @media (max-width: $tablet-width) {
@@ -132,7 +132,7 @@
     @media (max-width: $mobile-width) {
       max-width: none;
       margin-right: 0;
-      margin-bottom: 3px;
+      margin-bottom: rem(3);
     }
   }
 
@@ -149,7 +149,7 @@
     }
 
     @media (max-width: $mobile-width) {
-      padding-right: 20px;
+      padding-right: rem(20);
     }
   }
 
@@ -182,7 +182,7 @@
 
     @media (max-width: $mobile-width) {
       margin-right: 0;
-      margin-bottom: 3px;
+      margin-bottom: rem(3);
     }
   }
 
@@ -196,7 +196,7 @@
   }
 
   &__price-tag {
-    margin: 0 0 6px;
+    margin: 0 0 rem(6);
 
     font-size: rem(16);
     font-weight: 700;
@@ -208,7 +208,7 @@
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 2px;
+      margin-bottom: rem(2);
 
       font-size: rem(15);
       line-height: rem(18);
@@ -217,7 +217,7 @@
     &::after {
       content: "\20BD";
 
-      margin-left: 4px;
+      margin-left: rem(4);
 
       font-weight: 400;
     }
@@ -240,7 +240,7 @@
     &::after {
       content: "\20BD";
 
-      margin-left: 4px;
+      margin-left: rem(4);
 
       font-weight: 400;
     }
@@ -250,8 +250,8 @@
     position: relative;
     align-self: baseline;
 
-    width: 20px;
-    height: 20px;
+    width: rem(20);
+    height: rem(20);
 
     font-size: 0;
     line-height: 0;
@@ -262,29 +262,29 @@
     transition: $global-transition;
 
     @media (max-width: $mobile-width) {
-      margin-top: 7px;
+      margin-top: rem(7px);
     }
 
-    &::before,
-    &::after {
-      content: "";
+    &:focus {
+      opacity: 1;
 
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      width: 20px;
-      height: 2px;
-
-      background-color: $black;
+      &::before {
+        outline: 2px solid $dark-gray;
+      }
     }
 
     &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
+      content: "\2715";
 
-    &::after {
-      transform: translate(-50%, -50%) rotate(135deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: rem(20);
+      height: rem(20);
+
+      font-size: rem(20);
+      line-height: rem(20);
     }
   }
 
@@ -294,16 +294,16 @@
 
   &__promocode {
     display: flex;
-    margin: 0 0 12px;
+    margin: 0 0 rem(12);
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 10px;
+      margin-bottom: rem(10);
     }
   }
 
   &__input-wrapper {
     display: block;
-    margin-right: 5px;
+    margin-right: rem(5);
 
     @media (max-width: $mobile-width) {
       margin-right: rem(7);
@@ -311,8 +311,8 @@
   }
 
   &__input {
-    width: 145px;
-    padding: 10px 15px;
+    width: rem(145);
+    padding: rem(10) rem(15);
 
     font-size: rem(16);
 
@@ -320,15 +320,15 @@
     background-color: $light-gray;
 
     @media (max-width: $tablet-width) {
-      width: 117px;
-      padding: 8px 12px;
+      width: rem(117);
+      padding: rem(8) rem(12);
 
       font-size: rem(13);
     }
 
     @media (max-width: $mobile-width) {
       width: 100%;
-      padding: 14px 15px 12px;
+      padding: rem(14) rem(15) rem(12);
     }
 
     &:focus {
@@ -337,7 +337,7 @@
   }
 
   &__promo-button {
-    padding: 7px 29px 10px;
+    padding: rem(7) rem(29) rem(10);
 
     font-weight: 700;
     color: $dark-gray;
@@ -346,14 +346,14 @@
     cursor: pointer;
 
     @media (max-width: $tablet-width) {
-      padding: 6px 18px 7px;
+      padding: rem(6) rem(18) rem(7);
 
       font-size: rem(12);
     }
 
     @media (max-width: $mobile-width) {
       flex-shrink: 0;
-      padding: 6px 22px 7px;
+      padding: rem(6) rem(22) rem(7);
     }
 
     &:focus {
@@ -382,7 +382,7 @@
       color: $orange;
 
       @media (max-width: $tablet-width) {
-        margin-left: 7px;
+        margin-left: rem(7);
 
         font-size: rem(19);
       }
@@ -390,9 +390,8 @@
       &::after {
         content: "\20BD";
 
-        margin-left: 5px;
+        margin-left: rem(5);
 
-        //font-size: rem(23);
         line-height: 1.5;
       }
     }

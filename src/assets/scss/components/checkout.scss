@@ -18,12 +18,11 @@
   &__nav {
     display: flex;
     flex-wrap: wrap;
-    // margin: 0 0 39px;
     margin: 0 0 rem(39);
     padding: 0;
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 20px;
+      margin-bottom: rem(20);
     }
 
     @media (max-width: $mobile-width) {
@@ -65,13 +64,13 @@
     position: relative;
 
     display: block;
-    padding: 14px rem(24) 14px rem(60);
+    padding: rem(14) rem(24) rem(14) rem(60);
 
     letter-spacing: 0.4px;
     color: inherit;
 
     @media (max-width: $tablet-width) {
-      padding: 13px 0 11px rem(50);
+      padding: rem(13) 0 rem(11) rem(50);
 
       font-size: rem(12);
 
@@ -88,18 +87,18 @@
     &::before {
       position: absolute;
       top: 50%;
-      left: 12px;
+      left: rem(12);
 
       font-family: "Icons";
-      font-size: 35px;
+      font-size: rem(35);
       color: $orange;
 
       transform: translateY(-50%);
 
       @media (max-width: $tablet-width) {
-        left: 10px;
+        left: rem(10);
 
-        font-size: 30px;
+        font-size: rem(30);
         color: $dark-gray;
       }
 
@@ -114,7 +113,7 @@
       background-color: $orange;
 
       @media (max-width: $tablet-width) {
-        padding: 13px rem(16) 11px rem(50);
+        padding: rem(13) rem(16) rem(11) rem(50);
 
         letter-spacing: 0.9px;
       }
@@ -131,20 +130,20 @@
         content: "";
 
         position: absolute;
-        bottom: -11px;
-        left: 17px;
+        bottom: rem(-11);
+        left: rem(17);
 
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 13px 13px 0 13px;
+        border-width: rem(13) rem(13) 0 rem(13);
         border-color: $orange transparent transparent transparent;
 
         @media (max-width: $tablet-width) {
-          left: 16px;
-          bottom: -9px;
+          left: rem(16);
+          bottom: rem(-9);
 
-          border-width: 9px 9px 0 9px;
+          border-width: rem(9) rem(9) 0 rem(9);
         }
 
         @media (max-width: $mobile-width) {
@@ -155,7 +154,7 @@
 
     &--person {
       &::before {
-        content: "\e903";
+        content: "\e900";
       }
     }
 
@@ -173,20 +172,20 @@
 
     &--confirm {
       &::before {
-        content: "\e900";
+        content: "\e903";
       }
     }
   }
 
   &__title {
-    margin: 0 0 20px;
+    margin: 0 0 rem(20);
 
     font-size: rem(34);
     font-weight: 700;
     letter-spacing: 0.6px;
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 10px;
+      margin-bottom: rem(10);
 
       font-size: rem(32);
     }
@@ -217,47 +216,28 @@
     text-align: center;
     color: inherit;
 
-    .checkout__nav-icon {
+    &::before {
+      content: "\e904";
+
       position: absolute;
       top: 50%;
       left: 0;
 
       display: block;
-      width: 10px;
-      height: 17px;
+      width: rem(10);
+      height: rem(17);
+
+      font-family: "Icons";
+      font-size: rem(15);
+      color: $dark-gray;
 
       transform: translateY(-50%);
-
-      &::before,
-      &::after {
-        content: "";
-
-        position: absolute;
-        left: 4px;
-
-        width: 2px;
-        height: 12px;
-
-        background-color: $dark-gray;
-      }
-
-      &::before {
-        top: -1px;
-
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        bottom: -1px;
-
-        transform: rotate(-45deg);
-      }
     }
   }
 
   &__tabs {
     display: flex;
-    margin: 0 0 25px;
+    margin: 0 0 rem(25);
 
     font-size: rem(20);
     font-weight: 700;
@@ -281,14 +261,14 @@
       @media (max-width: $mobile-width) {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 4px;
+        margin-bottom: rem(4);
       }
     }
   }
 
   &__tab {
     display: block;
-    padding: 0 0 4px;
+    padding: 0 0 rem(4);
 
     color: $dark-gray;
 
@@ -320,46 +300,25 @@
     border-top: 1px solid $dark-gray;
     border-bottom: none;
 
-    .checkout__tab-icon {
+    &::before {
+      content: "\e905";
+
       position: absolute;
-      top: 70%;
-      right: -1px;
+      top: 60%;
+      right: rem(-2);
 
       display: block;
-      width: 14px;
-      height: 8px;
+      width: rem(14);
+      height: rem(8);
 
-      transform: translateY(-50%) rotate(180deg);
-
-      &::before,
-      &::after {
-        content: "";
-
-        position: absolute;
-        top: -1px;
-
-        width: 2px;
-        height: 10px;
-
-        background-color: $dark-gray;
-      }
-
-      &::before {
-        right: 3px;
-
-        transform: rotate(46deg);
-      }
-
-      &::after {
-        left: 3px;
-
-        transform: rotate(-46deg);
-      }
+      font-family: "Icons";
+      font-size: rem(7);
+      color: $dark-gray;
     }
 
     &--active {
-      .checkout__tab-icon {
-        transform: translateY(-50%) rotate(0);
+      &::before {
+        transform: rotate(180deg);
       }
     }
   }
@@ -367,8 +326,8 @@
   &__button-mobile {
     display: block;
     width: 100%;
-    margin-bottom: 16px;
-    padding: 6px 15px 10px;
+    margin-bottom: rem(16);
+    padding: rem(6) rem(15) rem(10);
 
     color: $white;
     text-align: center;
